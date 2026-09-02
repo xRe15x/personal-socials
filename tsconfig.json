@@ -1,0 +1,28 @@
+{
+  "include": ["src", "webpack.**.ts"],
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "outDir": "./dist",
+
+    "module": "nodenext",
+    "target": "esnext",
+    "types": [],
+
+    // Other Outputs
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    // Stricter Typechecking Options
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    // Recommended Options
+    "strict": true,
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "noUncheckedSideEffectImports": false,
+    "moduleDetection": "force",
+    "skipLibCheck": true,
+  },
+}
