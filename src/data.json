@@ -1,7 +1,7 @@
 {
     "social-media": [
         {
-            "name": "youtube",
+            "name": "Youtube",
             "url": "https://youtube.com",
             "colour": "rgb(200, 0, 0)",
             "logo-url": "./images/social-media/logos/youtube.png",
@@ -10,7 +10,7 @@
     ],
     "games": [
         {
-            "name": "valorant",
+            "name": "Valorant",
             "url": "",
             "colour": "rgb(125, 0, 0)",
             "logo-url": "",
