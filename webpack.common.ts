@@ -1,6 +1,7 @@
 import path from "node:path";
 import { fileURLToPath } from "url";
 import { type Configuration } from "webpack";
+import CopyPlugin from "copy-webpack-plugin";
 
 import "webpack-dev-server";
 
@@ -27,7 +28,10 @@ const common: Configuration = {
     resolve: {
         extensions: [".ts", ".js"],
         extensionAlias: {".js": [".ts", ".js"]}
-    }
+    },
+    plugins: [
+        new CopyPlugin({patterns: [{from: "src/images", to: "images"}]})
+    ]
 }
 
 export default common;
