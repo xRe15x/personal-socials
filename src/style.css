@@ -5,7 +5,7 @@
 
 body {
     margin: 0;
-    height: 100vh;
+    height: 100dvh;
 }
 
 .container {
@@ -18,8 +18,53 @@ body {
     flex: 3;
 }
 
+.middle {
+    /* background-color: lightgreen; */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.middle > * {
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.middle-top-container, .middle-bottom-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    box-sizing: border-box;
+}
+
+.middle-top-container {
+    margin-top: 5%;
+}
+
+.middle-bottom-container {
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin-bottom: 5%;
+}
+
+.middle-middle-container {
+    color: lightgrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.2rem;
+    flex-shrink: 3;
+}
+
+.middle-bg {
+    background-color: rgb(20, 20, 20);
+}
+
 .left {
     background-color: rgb(32, 32, 32);
+    background-position: center;
+    background-size: cover;
     clip-path: polygon(0 0, 100% 0, 87% 36%, 85% 73%, 78% 100%, 0 100%);
     display: flex;
     flex-direction: column;
@@ -57,16 +102,10 @@ body {
     );
 }
 
-.middle {
-    /* background-color: lightgreen; */
-}
-
-.middle-bg {
-    background-color: rgb(20, 20, 20);
-}
-
 .right {
-    background-color: rgb(32, 32, 32);;
+    background-color: rgb(32, 32, 32);
+    background-position: center;
+    background-size: cover;
     clip-path: polygon(12% 61%, 9% 24%, 14% 0, 100% 0, 100% 100%, 4% 100%);
     display: flex;
     flex-direction: column;
@@ -109,6 +148,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    margin-bottom: 3%;
 }
 
 #social-media {
@@ -121,14 +162,18 @@ body {
     max-width: 200px;
 }
 
-#fav-games {
+.text-block {
     background-color: rgb(20, 20, 20);
     border-radius: 6px;
     padding: min(12px, 0.6rem);
+    margin: 0;
     border: 2px solid rgb(50, 50, 50);
-    max-width: 80%;
+    max-width: 100%;
     max-height: 100%;
     color: lightgrey;
+    font-size: 1.2rem;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 .link-list {
