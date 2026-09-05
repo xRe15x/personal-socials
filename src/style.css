@@ -3,6 +3,7 @@
     --middle-colour: rgb(10, 10, 10);
     --right-colour: rgb(15, 15, 15);
     --border-colour: rgb(25, 25, 25);
+    --hover-colour: rgb(200, 200, 200);
 }
 
 body {
@@ -200,6 +201,11 @@ body {
     gap: 0.6rem;
     text-decoration: none;
     color: lightgrey;
+    transition: color 0.2s;
+}
+
+.list-a:hover {
+    color: var(--hover-colour);
 }
 
 .link-text {

@@ -31,18 +31,19 @@ function insertLink(jsonData: LinkData, ul: HTMLUListElement) {
 
     // Use these if available
     const img = jsonData["logo-url"] ? `<img class="link-img" src="${jsonData["logo-url"]}" alt="${jsonData.name} logo">` : "";
-    const font = jsonData.font ? `style="font-family: '${jsonData.name}'"` : "";
+    const font = jsonData.font ? `font-family: '${jsonData.name}';` : "";
+    const hoverColour = jsonData.colour ? `--hover-colour: ${jsonData.colour}` : "";
+
+    const style = `style="${font} ${hoverColour}"`;
 
     ul.insertAdjacentHTML("beforeend", `
         <li>
-            <a href="${jsonData.url}" class="list-a">
+            <a href="${jsonData.url}" class="list-a" ${style}>
                 ${img}
-                <span class="link-text" ${font}>${jsonData.name}</span>
+                <span class="link-text">${jsonData.name}</span>
             </a>
         </li>
     `);
-
-    // Add hover + background change
 }
 
 data.games.forEach(gameData => {
