@@ -2,7 +2,10 @@ import data from "./data.json" with {type: "json"};
 import type {LinkData} from "./types.js";
 
 const leftDiv = document.getElementById("left") as HTMLDivElement;
+const leftBgTransition = document.querySelector(".left-bg-transition") as HTMLDivElement;
+
 const rightDiv = document.getElementById("right") as HTMLDivElement;
+const rightBgTransition = document.querySelector(".right-bg-transition") as HTMLDivElement;
 
 const socialMediaUl = document.getElementById("social-media") as HTMLUListElement;
 const gamesUl = document.getElementById("games") as HTMLUListElement;
@@ -38,12 +41,30 @@ function insertLink(jsonData: LinkData, ul: HTMLUListElement) {
 
     ul.insertAdjacentHTML("beforeend", `
         <li>
-            <a href="${jsonData.url}" class="list-a" ${style}>
+            <a data-id="${jsonData.name}" href="${jsonData.url}" class="list-a" ${style}>
                 ${img}
                 <span class="link-text">${jsonData.name}</span>
             </a>
         </li>
     `);
+
+    // Background image change on hover
+    const link = ul.querySelector(`[data-id="${jsonData.name}"]`) as HTMLLinkElement;
+    const bg = `URL(${jsonData["background-url"]})`;
+
+    if (link && jsonData["background-url"]) {
+        const bgElement = ul === gamesUl ? rightDiv : leftDiv;
+        const bgTransitionElement = ul === gamesUl ? rightBgTransition : leftBgTransition;
+
+        link.addEventListener("mouseenter", () => {
+            bgElement.style.backgroundImage = `linear-gradient(rgb(0,0,0,0.6)), ${bg}`;
+            bgTransitionElement.classList.add("active");
+        })
+
+        link.addEventListener("mouseleave", () => {
+            bgTransitionElement.classList.remove("active");
+        })
+    }
 }
 
 data.games.forEach(gameData => {
