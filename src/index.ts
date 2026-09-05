@@ -41,7 +41,7 @@ function insertLink(jsonData: LinkData, ul: HTMLUListElement) {
 
     ul.insertAdjacentHTML("beforeend", `
         <li>
-            <a data-id="${jsonData.name}" href="${jsonData.url}" class="list-a" ${style}>
+            <a data-id="${jsonData.name}" href="${jsonData.url || "#"}" class="list-a" ${style}>
                 ${img}
                 <span class="link-text">${jsonData.name}</span>
             </a>
