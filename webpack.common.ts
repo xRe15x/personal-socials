@@ -30,7 +30,7 @@ const common: Configuration = {
         extensionAlias: {".js": [".ts", ".js"]}
     },
     plugins: [
-        new CopyPlugin({patterns: [{from: "src/images", to: "images"}]})
+        new CopyPlugin({patterns: [{from: "src/storage", to: "storage"}]})
     ]
 }
 

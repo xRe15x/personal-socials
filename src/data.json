@@ -1,20 +1,26 @@
 {
+    "title": "Hello, I am xRe15x",
+    "about-me-1": "I like...",
+    "about-me-2": "I also like...",
+    "fav-games": "My favourite games are...",
     "social-media": [
         {
             "name": "Youtube",
+            "font": "./fonts/coolFont.ttf",
             "url": "https://youtube.com",
             "colour": "rgb(200, 0, 0)",
-            "logo-url": "./images/social-media/logos/youtube.png",
-            "background-url": ""
+            "logo-url": "./storage/social-media/logos/youtube.png",
+            "background-url": "./images/social-media/background/myChannel.png"
         }
     ],
     "games": [
         {
             "name": "Valorant",
-            "url": "",
-            "colour": "rgb(125, 0, 0)",
-            "logo-url": "",
-            "background-url": ""
+            "font": "./storage/games/fonts/valorant.ttf",
+            "url": "https://roblox.com",
+            "colour": "rgb(180, 180, 180)",
+            "logo-url": "./storage/games/logos/valorant.png",
+            "background-url": "./storage/games/background/coolValorantGameplay.png"
         }
     ]
 }

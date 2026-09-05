@@ -24,7 +24,7 @@ Note:
 - Not all of these are required, ``font``, ``colour``, ``logo-url`` and ``background-url`` can be omitted if you don't want to use them and a default will be in place.
 - Both relative and absolute urls should work fine.
 - ``colour`` can be any colour format css supports.
-- ``font`` supports all main font formats like ``.wott2``, ``.ttf`` etc
+- ``font`` supports all main font formats like ``.wott2``, ``.ttf`` etc (does **not** support importing fonts)
 
 Here is an example layout of what ``data.json`` should look like
 ```
