@@ -7,8 +7,11 @@ const leftBgTransition = document.querySelector(".left-bg-transition") as HTMLDi
 const rightDiv = document.getElementById("right") as HTMLDivElement;
 const rightBgTransition = document.querySelector(".right-bg-transition") as HTMLDivElement;
 
-const socialMediaUl = document.getElementById("social-media") as HTMLUListElement;
-const gamesUl = document.getElementById("games") as HTMLUListElement;
+const socialMedia = document.getElementById("social-media") as HTMLDivElement;
+const socialMediaUl = socialMedia.querySelector(".link-list-container") as HTMLUListElement;
+
+const games = document.getElementById("games") as HTMLDivElement;
+const gamesUl = games.querySelector(".link-list-container") as HTMLUListElement;
 
 const aboutMe1 = document.getElementById("about-me-1") as HTMLParagraphElement;
 const aboutMe2 = document.getElementById("about-me-2") as HTMLParagraphElement;
@@ -74,5 +77,22 @@ data.games.forEach(gameData => {
 data["social-media"].forEach(mediaData => {
     insertLink(mediaData, socialMediaUl);
 })
+
+const scrollObserver = new ResizeObserver(entries => {
+    entries.forEach(element => {
+        const container = element.target.querySelector(".link-list-container");
+        if (container === null) return;
+
+        const isRow = window.getComputedStyle(container).flexDirection === "row"
+        const scroll = isRow ? container.scrollWidth : container.scrollHeight;
+        const client = isRow ? container.clientWidth : container.clientHeight;
+
+        if (scroll > client) {
+            container.classList.add("scroll-fade")
+        }
+    })
+})
+
+document.querySelectorAll(".link-list").forEach(element => scrollObserver.observe(element));
 
 console.log("JS running!");
