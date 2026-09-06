@@ -1,8 +1,11 @@
 # Personal socials and gaming site
 ## About
-todo...
+Not too sure what to name this but you can link your social media, talk about yourself a bit, and list some games as well.
+
+Well the css is quite ass and the code... works
 ## How to use
-Feel free to edit the html (``index.html``) and css (``style.css``) however you like, but for adding links I recommend editing ``data.json``.
+Feel free to edit the html (``index.html``) and css (``style.css``) however you like, but for adding links I recommend editing ``data.json``.  
+**ALL IMAGES, FONTS ETC MUST BE IN ``./src/storage`` OR ITS SUBFOLDERS. AND THIS FOLDER (``storage``) SHOULD NOT BE RENAMED OR MOVED**
 ### data.json schema
 ``title`` is the title in the center of the page  
 ``about-me-1`` is the top middle text block  
